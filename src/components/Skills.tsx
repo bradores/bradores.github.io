@@ -10,7 +10,7 @@ const skillRowVariants = {
     transition: {
       delay: i * 0.06,
       duration: 0.4,
-      ease: 'easeOut',
+      ease: 'easeOut' as const,
     },
   }),
 }
@@ -23,7 +23,7 @@ const dotVariants = {
     transition: {
       delay: i * 0.03,
       duration: 0.25,
-      ease: 'easeOut',
+      ease: 'easeOut' as const,
     },
   }),
 }
