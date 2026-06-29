@@ -1,23 +1,21 @@
 # My CV — Personal Resume Website
 
-> Built with **Vite + React + TypeScript + Tailwind CSS**
+> Built with **Vite + React + TypeScript + Tailwind CSS + Framer Motion**
 
-A modern, responsive personal CV/resume website with a clean green theme, interactive portfolio carousel, voice command navigation, and print support.
+A modern, responsive personal CV/resume website with a clean green theme, smooth page animations, interactive portfolio cards, and a contact modal.
 
 ---
 
 ## Features
 
 - **Responsive Design** — Optimized for desktop, tablet, and mobile using Tailwind CSS
-- **Interactive Timeline** — Career and education history with animated timeline dots
-- **Skills Visualization** — Dot-based skill level indicators grouped by category
-- **Portfolio Carousel** — Full-screen project slideshow with images, descriptions, and navigation (keyboard, voice, or click)
-- **Voice Commands** — Navigate the site hands-free using [annyang](https://www.talater.com/annyang/) speech recognition
-- **Print Support** — One-click print-friendly output of the entire resume
-- **Contact Modal** — Overlay with contact details and WeChat QR code
-- **Keyboard Navigation** — Arrow keys to browse portfolio projects
-- **Loading Progress Bar** — Smooth top-of-page loading indicator via Pace
+- **Smooth Animations** — Page load entrance, scroll reveal, hover interactions, and spring physics powered by [Framer Motion](https://www.framer.com/motion/)
+- **Skills Visualization** — Dot-based skill level indicators grouped by category with staggered popup animations
+- **Portfolio Cards** — Interactive project cards with hover lift effects, inline in the My Story section
+- **Contact Modal** — Overlay with contact details (email, phone) using `AnimatePresence` for smooth enter/exit transitions
 - **Green Theme** — Custom green color palette with gradient accents and modern typography (Inter & Outfit fonts)
+- **Scroll Animations** — Sections and elements animate into view as you scroll using `whileInView`
+- **Micro-interactions** — Hover and tap feedback on cards, buttons, icons, and avatar
 
 ---
 
@@ -29,9 +27,8 @@ A modern, responsive personal CV/resume website with a clean green theme, intera
 | Language       | TypeScript 5.6                 |
 | Build Tool     | Vite 6                         |
 | Styling        | Tailwind CSS 3.4               |
-| Icons          | ElegantIcons (icon font)       |
-| Voice          | annyang (speech recognition)   |
-| Loading Bar    | Pace                           |
+| Animation      | Framer Motion 12               |
+| Icons          | react-icons (Feather icons)    |
 
 ---
 
@@ -86,61 +83,50 @@ npm run preview
 my-cv/
 ├── index.html              # Entry HTML
 ├── vite.config.ts          # Vite configuration
-├── tailwind.config.js      # Tailwind CSS configuration
+├── tailwind.config.js      # Tailwind CSS configuration (includes custom animations)
 ├── tsconfig.json           # TypeScript configuration
 ├── postcss.config.js       # PostCSS configuration
 ├── package.json
 ├── public/
-│   └── images/             # Static images
+│   └── images/             # Static images (avatar, icons, etc.)
 ├── src/
 │   ├── main.tsx            # React entry point
-│   ├── App.tsx             # Root component
-│   ├── index.css           # Global styles & Tailwind imports
+│   ├── App.tsx             # Root component with staggered entrance animation
+│   ├── index.css           # Global styles, Tailwind imports & custom animation classes
 │   ├── data.ts             # All resume data (skills, timeline, portfolio)
 │   ├── types/
 │   │   └── index.ts        # TypeScript interfaces
-│   ├── components/
-│   │   ├── Header.tsx          # Avatar, name, title, location
-│   │   ├── MyStory.tsx         # About me & portfolio list
-│   │   ├── Timeline.tsx        # Career/education timeline
-│   │   ├── Skills.tsx          # Skill categories with dot ratings
-│   │   ├── PortfolioCarousel.tsx  # Full-screen project slideshow
-│   │   ├── ContactModal.tsx    # Contact info overlay
-│   │   ├── Bye.tsx             # Exit/goodbye overlay
-│   │   └── Icon.tsx            # ElegantIcons wrapper component
-│   └── fonts/              # ElegantIcons font files
-├── css/                    # Legacy CSS (not actively used)
-├── js/                     # Legacy JS — annyang & pace only
-└── fonts/                  # Legacy font files
+│   └── components/
+│       ├── Header.tsx          # Avatar (spring animation), name, title, location
+│       ├── MyStory.tsx         # About me & interactive portfolio cards
+│       ├── Timeline.tsx        # Career/education timeline (commented out)
+│       ├── Skills.tsx          # Skill categories with dot ratings & staggered animations
+│       └── ContactModal.tsx    # Contact info overlay with AnimatePresence
 ```
 
 ---
 
-## Voice Commands
+## Animations
 
-Once you grant microphone access, say:
+The site uses [Framer Motion](https://www.framer.com/motion/) for a cohesive animation experience:
 
-| Command               | Action                          |
-| --------------------- | ------------------------------- |
-| "Hello"               | Show voice help panel           |
-| "Over" / "Close"      | Close panels and overlays       |
-| "Contact (you)"       | Open contact modal              |
-| "Print (now)"         | Print the resume                |
-| "(Your) works"        | Open portfolio carousel         |
-| "(Number) one" - "five" | Open a specific project slot  |
-| "(Number) more"       | Open the "More" project slot    |
-| "Next" / "Down"       | Next portfolio slide            |
-| "Previous" / "Up"     | Previous portfolio slide        |
-| "Goodbye"             | Show goodbye overlay            |
+- **Page Load**: Container uses `staggerChildren` for sequential section entrance on page load
+- **Scroll Reveal**: All major sections use `whileInView` with `viewport={{ once: true }}` to animate in as you scroll
+- **Hover Effects**: Cards, buttons, and icons use `whileHover` for lift, scale, and rotation micro-interactions
+- **Spring Physics**: Avatar entrance uses spring animation for a natural bounce feel
+- **Staggered Lists**: Portfolio cards, skill rows, and dots animate in sequentially based on their index
+- **Modal Transitions**: Contact modal uses `AnimatePresence` with clip-path circle reveal animation
+- **Custom CSS Keyframes**: `tailwind.config.js` includes additional keyframes (fade-in-up, float, glow, spin-slow, etc.)
 
 ---
 
 ## Customization
 
-1. **Personal Info** — Edit `src/data.ts` to update your name, bio, skills, timeline, and portfolio items
-2. **Avatar** — Replace `public/images/pp.jpg` with your own photo
-3. **Contact** — Update email, phone, and WeChat info in `src/components/ContactModal.tsx`
+1. **Personal Info** — Edit `src/data.ts` to update your bio, skills, timeline, and portfolio items
+2. **Avatar** — Add your photo and update the avatar section in `src/components/Header.tsx`
+3. **Contact** — Update email and phone info in `src/components/ContactModal.tsx`
 4. **Theme** — Adjust colors in `tailwind.config.js` under the `green` and `gray` color keys
+5. **Animations** — Tweak animation variants and durations in each component or `App.tsx`
 
 ---
 
