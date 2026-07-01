@@ -63,7 +63,7 @@ input, button {
   width: 2px;
   height: 100%;
   position: absolute;
-  left: 4px;
+  left: 14px;
   top: 0;
   background: linear-gradient(to bottom, #109d59, #6ee7b7);
 }
@@ -72,7 +72,7 @@ input, button {
   width: 12px;
   height: 12px;
   position: absolute;
-  left: -7px;
+  left: -5px;
   top: 4px;
   background-color: #109d59;
   border: 3px solid #d1fae5;

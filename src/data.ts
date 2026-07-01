@@ -25,31 +25,26 @@ export const portfolioItems: PortfolioItem[] = [
 
 export const timelineItems: TimelineItem[] = [
   {
-    id: 's5',
-    title: 'Lanex Corporation',
-    subtitle: 'Software Engineer',
-    period: '2018.6 - Present',
+    id: 's2',
+    title: 'Digital Transformation',
+    subtitle: 'Mid-Level Full Stack Developer',
+    period: '2025.2 - Present',
   },
   {
-    id: 's4',
-    title: '1722 IT Services',
-    subtitle: 'Junior Full Stack Web Developer',
-    period: '2017.10 - 2018.6',
-  },
-  {
-    id: 's3',
-    title: 'Graduated from College',
-    subtitle: 'Bachelors Degree in Computer Engineering',
-    period: '2012.6 - 2018.3',
+    id: 's1',
+    title: 'Digital Transformation',
+    subtitle: 'Junior Full Stack Developer',
+    period: '2023.11 - 2025.2',
   },
 ]
 
 export const skillGroups: SkillGroup[] = [
   { category: 'Web Frontend', name: '', level: 0 },
+  { name: 'TypeScript', level: 10 },
   { name: 'Reactjs', level: 10 },
   { name: 'Vuejs', level: 8 },
   { name: 'Nextjs', level: 8 },
-  { name: 'Tailwind CSS', level: 7 },
+  { name: 'Tailwind', level: 10 },
   
   { category: 'Web Backend', name: '', level: 0 },
   { name: 'Expressjs', level: 8 },
@@ -57,13 +52,14 @@ export const skillGroups: SkillGroup[] = [
   { name: 'Nestjs', level: 4 },
   { name: 'Prisma ORM', level: 8 },
   { name: 'Drizzle ORM', level: 4 },
+  { name: 'PHP Core', level: 10 },
 
   { category: 'Mobile Development', name: '', level: 0 },
   { name: 'React Native', level: 8 },
   { name: 'Jetpack Compose Kotlin', level: 2 },
 
   { category: 'Database', name: '', level: 0 },
-  { name: 'MySQL', level: 6 },
+  { name: 'MySQL', level: 10 },
   { name: 'MariaDB', level: 6 },
 ]
 

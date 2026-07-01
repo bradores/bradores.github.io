@@ -17,7 +17,6 @@ const timelineVariants = {
 export default function Timeline() {
   return (
     <motion.div
-      className="mb-10"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}

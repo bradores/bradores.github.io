@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
 import Header from './components/Header'
 import MyStory from './components/MyStory'
-// Timeline from './components/Timeline'
+import Timeline from './components/Timeline'
+import Portfolio from './components/Portfolio'
 import Skills from './components/Skills'
 
 const containerVariants = {
@@ -60,19 +61,14 @@ export default function App() {
           <motion.div variants={sectionVariants}>
             <MyStory />
           </motion.div>
-          <motion.div
-            className="info_area w-full"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-          >
-            {/*<motion.div variants={sectionVariants}>
-              <Timeline />
-            </motion.div>*/}
-            <motion.div variants={sectionVariants}>
-              <Skills />
-            </motion.div>
+          <motion.div variants={sectionVariants}>
+            <Timeline />
+          </motion.div>
+          <motion.div variants={sectionVariants}>
+            <Portfolio />
+          </motion.div>
+          <motion.div variants={sectionVariants}>
+            <Skills />
           </motion.div>
         </motion.div>
       </div>

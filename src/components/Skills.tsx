@@ -8,8 +8,8 @@ const skillRowVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      delay: i * 0.06,
-      duration: 0.4,
+      delay: i * 0.04,
+      duration: 0.25,
       ease: 'easeOut' as const,
     },
   }),
@@ -21,8 +21,8 @@ const dotVariants = {
     scale: 1,
     opacity: 1,
     transition: {
-      delay: i * 0.03,
-      duration: 0.25,
+      delay: i * 0.01,
+      duration: 0.1,
       ease: 'easeOut' as const,
     },
   }),
@@ -34,14 +34,14 @@ export default function Skills() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
     >
       <motion.h3
         className="section-title text-lg font-semibold"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
       >
         Skillsets
       </motion.h3>
@@ -51,7 +51,7 @@ export default function Skills() {
         initial={{ opacity: 0, y: 20, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: '-50px' }}
-        transition={{ duration: 0.5, delay: 0.1 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
         whileHover={{ y: -3 }}
       >
         {skillGroups.map((skill, index) => {
