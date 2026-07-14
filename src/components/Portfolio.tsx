@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { portfolioItems } from '../data'
-import { FiFileText } from 'react-icons/fi'
+import { FiFileText, FiBriefcase } from 'react-icons/fi'
 
 const portfolioVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -24,19 +24,22 @@ export default function Portfolio() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <motion.h3
-        className="section-title text-lg font-semibold"
+        className="section-title text-xl font-semibold flex items-center gap-2.5"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
+        <span className="w-7 h-7 rounded-lg green-gradient text-white flex items-center justify-center text-sm shadow-sm">
+          <FiBriefcase size={15} />
+        </span>
         Portfolio
       </motion.h3>
       <div className="space-y-3">
         {portfolioItems.map((item, index) => (
           <motion.div
             key={index}
-            className="modern-card p-4 md:p-5 border border-gray-100 cursor-pointer group"
+            className="modern-card p-4 md:p-5 border border-gray-100 hover:border-green-200 cursor-pointer group"
             custom={index}
             variants={portfolioVariants}
             initial="hidden"
@@ -54,7 +57,16 @@ export default function Portfolio() {
               </motion.span>
               <span>
                 {item.title}
-                <span className="block text-xs font-normal text-gray-400 mt-0.5">{item.tech}</span>
+                <span className="mt-1.5 flex flex-wrap gap-1.5">
+                  {item.tech.split(',').map((t) => (
+                    <span
+                      key={t}
+                      className="px-2 py-0.5 rounded-md bg-green-50 text-green-700 text-[11px] font-medium tracking-wide"
+                    >
+                      {t.trim()}
+                    </span>
+                  ))}
+                </span>
               </span>
             </h4>
             <p className="mt-2 text-sm text-gray-500 leading-relaxed pl-8">{item.description}</p>

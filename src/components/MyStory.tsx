@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { FiUser } from 'react-icons/fi'
 
 export default function MyStory() {
   return (
@@ -10,16 +11,19 @@ export default function MyStory() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <motion.h3
-          className="section-title text-lg font-semibold"
+          className="section-title text-xl font-semibold flex items-center gap-2.5"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
+          <span className="w-7 h-7 rounded-lg green-gradient text-white flex items-center justify-center text-sm shadow-sm">
+            <FiUser size={15} />
+          </span>
           My Story
         </motion.h3>
         <motion.div
-          className="bg-white rounded-xl p-5 md:p-6 shadow-card border border-gray-100 hover-lift"
+          className="bg-white rounded-2xl p-5 md:p-6 shadow-card border border-gray-100 hover:border-green-200 hover-lift"
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: '-50px' }}
@@ -38,7 +42,7 @@ export default function MyStory() {
           <div className="space-y-3 text-sm text-gray-600 leading-relaxed">
             {[
               'Continuous learning is core to how I work — I am always exploring new technologies and refining my approach to build more efficient, maintainable software.',
-              'I am currently a Full Stack Software Developer at Digital Transformation, where every project is a chance to sharpen my skills and contribute to work that genuinely matters.',
+              'I am currently a Mid-Level Frontend Developer at Digital Transformation, where every project is a chance to sharpen my skills and contribute to work that genuinely matters.',
             ].map((text, i) => (
               <motion.p
                 key={i}

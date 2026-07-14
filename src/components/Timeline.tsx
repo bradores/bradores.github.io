@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { timelineItems } from '../data'
+import { FiTrendingUp } from 'react-icons/fi'
 
 const timelineVariants = {
   hidden: { opacity: 0, x: -30 },
@@ -23,17 +24,20 @@ export default function Timeline() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <motion.h3
-        className="section-title text-lg font-semibold"
+        className="section-title text-xl font-semibold flex items-center gap-2.5"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
+        <span className="w-7 h-7 rounded-lg green-gradient text-white flex items-center justify-center text-sm shadow-sm">
+          <FiTrendingUp size={15} />
+        </span>
         Timeline
       </motion.h3>
 
       <motion.div
-        className="bg-white rounded-xl p-5 md:p-6 shadow-card border border-gray-100 hover-lift"
+        className="bg-white rounded-2xl p-5 md:p-6 shadow-card border border-gray-100 hover:border-green-200 hover-lift"
         initial={{ opacity: 0, y: 20, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: '-50px' }}

@@ -27,13 +27,13 @@ export const timelineItems: TimelineItem[] = [
   {
     id: 's2',
     title: 'Digital Transformation',
-    subtitle: 'Mid-Level Full Stack Developer',
+    subtitle: 'Mid-Level Frontend Developer',
     period: '2025.2 - Present',
   },
   {
     id: 's1',
     title: 'Digital Transformation',
-    subtitle: 'Junior Full Stack Developer',
+    subtitle: 'Junior Frontend Developer',
     period: '2023.11 - 2025.2',
   },
 ]
@@ -49,14 +49,14 @@ export const skillGroups: SkillGroup[] = [
   { category: 'Web Backend', name: '', level: 0 },
   { name: 'Expressjs', level: 8 },
   { name: 'Honojs', level: 10 },
-  { name: 'Nestjs', level: 4 },
+  { name: 'Nestjs', level: 2 },
   { name: 'Prisma ORM', level: 8 },
   { name: 'Drizzle ORM', level: 4 },
   { name: 'PHP Core', level: 10 },
 
   { category: 'Mobile Development', name: '', level: 0 },
   { name: 'React Native', level: 8 },
-  { name: 'Jetpack Compose Kotlin', level: 2 },
+  { name: 'Jetpack Compose Kotlin', level: 1 },
 
   { category: 'Database', name: '', level: 0 },
   { name: 'MySQL', level: 10 },
